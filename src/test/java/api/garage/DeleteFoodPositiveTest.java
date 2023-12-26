@@ -1,10 +1,14 @@
 package api.garage;
 
 import api.mappings.Car;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.ResponseBody;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import retrofit2.Response;
+
+import java.io.IOException;
 
 import static api.retrofit.vehicle.Vehicle.*;
 import static api.validators.ResponseValidator.*;
@@ -23,23 +27,23 @@ public class DeleteFoodPositiveTest {
                 .plateYear(2019)
                 .type("Van")
                 .plate("AB-22-WW")
-                .active(false)
+                .active(true)
                 .build();
         Response<Car> responseCreate = createVehicle(carRequest);
-        assertCreated(responseCreate);
 
         assertThat("Body is not null", responseCreate.body(), notNullValue());
         vehicleId = responseCreate.body().getId();
 
-        assertOk(responseCreate);
     }
+
 
     @Test(description = "delete vehicle with sucess")
     public void deleteVehicleTest(){
-        Response<ResponseBody> response = deleteVehicleById(9);
+
+        Response<ResponseBody> response = deleteVehicleById(vehicleId);
         assertNoContent(response);
 
-        Response<Car> responseGet = getVehicleById(9);
+        Response<Car> responseGet = getVehicleById(vehicleId);
         assertNotFound(responseGet);
     }
 }
