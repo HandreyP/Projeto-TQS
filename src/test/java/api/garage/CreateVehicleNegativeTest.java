@@ -1,16 +1,19 @@
 package api.garage;
 
 import api.mappings.Car;
-import api.mappings.ErrorResponse;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import retrofit2.Response;
 
-import static api.retrofit.vehicle.Vehicle.createVehicle;
+import static api.retrofit.vehicle.Vehicles.*;
 import static api.validators.ResponseValidator.assertBadRequest;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class CreateVehicleNegativeTest {
+
+    private Integer vehicleId;
 
     @Test(description = "create vehicle with failure")
     public void createVehicleNegativeTest(){
@@ -23,7 +26,11 @@ public class CreateVehicleNegativeTest {
                 .plate("AB-22-WW")
                 .active(false)
                 .build();
-        Response<Car> response = createVehicle(carRequest);
+        Response<Integer> response = createVehicles(carRequest);
         assertBadRequest(response);
+
     }
+
+    
+
 }

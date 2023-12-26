@@ -9,7 +9,7 @@ import retrofit2.Response;
 
 import java.util.List;
 
-public class Vehicle {
+public class Vehicles {
         public static final VehicleCalls vehicleCalls = new RetrofitBuilder().getRetrofit().create(VehicleCalls.class);
 
         @SneakyThrows
@@ -22,13 +22,15 @@ public class Vehicle {
                 return vehicleCalls.getVehiclesById(vehicleId).execute();
         }
 
+
         @SneakyThrows
-        public static Response<Car> createVehicle(Car car){
-                return vehicleCalls.createVehicle(car).execute();
+        public static Response<Integer> createVehicles(Car car){
+                return vehicleCalls.createVehicles(car).execute();
         }
 
         @SneakyThrows
         public static Response<ResponseBody> deleteVehicleById(Integer vehicleId){
                 return vehicleCalls.deleteVehicleById(vehicleId).execute();
         }
+
 }

@@ -6,8 +6,8 @@ import retrofit2.Response;
 
 import java.util.List;
 
-import static api.retrofit.vehicle.Vehicle.getAllVehicles;
-import static api.retrofit.vehicle.Vehicle.getVehicleById;
+import static api.retrofit.vehicle.Vehicles.getAllVehicles;
+import static api.retrofit.vehicle.Vehicles.getVehicleById;
 import static api.validators.ResponseValidator.assertOk;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;

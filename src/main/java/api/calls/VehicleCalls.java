@@ -22,8 +22,9 @@ public interface VehicleCalls {
     @GET(VEHICLE_ID)
     Call<Car> getVehiclesById(@Path(ID) Integer vehicleId);
 
+
     @POST(VEHICLE)
-    Call<Car> createVehicle(@Body Car car);
+    Call<Integer> createVehicles(@Body Car car);
 
     @DELETE(VEHICLE_ID)
     Call<ResponseBody> deleteVehicleById(@Path(ID) Integer vehicleId);
