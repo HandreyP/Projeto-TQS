@@ -39,12 +39,12 @@ public class CreateVehiclePositiveTest {
         Car carResponse = getVehicleById(vehicleId).body();
 
         assertThat("id should not be null", carResponse.getId(), notNullValue());
-        assertThat("Brand should not be null", carResponse.getBrand(), is(carResponse.getBrand()));
-        assertThat("Model should not be null", carResponse.getModel(), is(carResponse.getModel()));
-        assertThat("PlateYear should not be null", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
-        assertThat("Type should not be null", carResponse.getType(), is(carResponse.getType()));
-        assertThat("PLate should not be null", carResponse.getPlate(), is(carResponse.getPlate()));
-        assertThat("Active should not be null", carResponse.isActive(), is(carResponse.isActive()));
+        assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
+        assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
+        assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
+        assertThat("Type should not be expected", carResponse.getType(), is(carResponse.getType()));
+        assertThat("PLate should not be expected", carResponse.getPlate(), is(carResponse.getPlate()));
+        assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
     }
 
    @AfterMethod

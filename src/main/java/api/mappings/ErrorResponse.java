@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 public class ErrorResponse {
-
     private Timestamp timestamp;
     private Integer status;
     private String error;

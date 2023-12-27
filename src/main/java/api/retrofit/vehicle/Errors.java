@@ -13,10 +13,6 @@ import java.lang.annotation.Annotation;
 
 public class Errors {
 
-    /**
-     * Can use this class to convert normal body to errorBody to check errors
-     */
-
     private static final Retrofit retrofit = new RetrofitBuilder().getRetrofit();
 
     public static ErrorResponse getErrorsResponse(Response response) throws IOException {

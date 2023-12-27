@@ -32,17 +32,11 @@ public class GetVehiclePositiveTest {
 
         Car carResponse = response.body();
         assertThat("client is not the expected", carResponse.getClient(), is(1));
-
         assertThat("brand is not the expected", carResponse.getBrand(), is("Opel"));
-
         assertThat("model is not the expected", carResponse.getModel(), is("Corsa"));
-
         assertThat("plateyear is not the expected", carResponse.getPlateYear(), is(2002));
-
         assertThat("type is not the expected", carResponse.getType(), is("Hatchback"));
-
         assertThat("plate is not the expected", carResponse.getPlate(), is("34-CB-45"));
-
         assertThat("active is not the expected", carResponse.isActive(), is(Boolean.TRUE));
     }
 }
