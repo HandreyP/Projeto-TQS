@@ -15,6 +15,11 @@ public interface VehicleCalls {
 
     String ID = "id";
 
+    String ADD_VEHICLE_TO_CLIENT = "vehicle/{vehicleId}/client/{clientId}";
+
+
+
+
 
     @GET(VEHICLE)
     Call<List<Car>> getAllVehicles();
@@ -28,4 +33,7 @@ public interface VehicleCalls {
 
     @DELETE(VEHICLE_ID)
     Call<ResponseBody> deleteVehicleById(@Path(ID) Integer vehicleId);
+
+    @PUT(ADD_VEHICLE_TO_CLIENT)
+    Call<Void> addVehicleToClient(@Path("vehicleId") Integer vehicleId, @Path("clientId") Integer clientId);
 }
