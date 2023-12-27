@@ -1,0 +1,36 @@
+plugins {
+  id 'java'
+  id 'io.freefair.lombok' version '8.4'
+}
+
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+  implementation 'com.squareup.retrofit2:converter-jackson:2.9.0'
+  implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0'
+  implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+  implementation 'org.hamcrest:hamcrest:2.2'
+  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+  testImplementation 'org.testng:testng:7.8.0'
+    testImplementation 'junit:junit:4.13.1'
+}
+
+test {
+  useTestNG()
+}
+
+
+tasks.register('integrationTests', Test) {
+  outputs.upToDateWhen { false }
+  scanForTestClasses = false
+  useTestNG() {
+    useDefaultListeners = true
+  }
+
+  testLogging.showStandardStreams = true
+}
