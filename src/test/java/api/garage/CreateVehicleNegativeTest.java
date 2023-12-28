@@ -235,7 +235,7 @@ public class CreateVehicleNegativeTest {
 
         assertThat("status is not the expected", errorResponse.getStatus(), is(500));
         assertThat("Error is not the expected", errorResponse.getError(), is("Internal Server Error"));
-//        assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \\\"String.matches(String)\\\" because \\\"plate\\\" is null"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \"String.matches(String)\" because \"plate\" is null"));
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
     }
 
@@ -255,7 +255,7 @@ public class CreateVehicleNegativeTest {
 
         assertThat("status is not the expected", errorResponse.getStatus(), is(500));
         assertThat("Error is not the expected", errorResponse.getError(), is("Internal Server Error"));
-//        assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \\\"String.matches(String)\\\" because \\\"plate\\\" is null"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \"String.matches(String)\" because \"plate\" is null"));
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
     }
     @AfterClass

@@ -22,7 +22,6 @@ public class Vehicles {
                 return vehicleCalls.getVehiclesById(vehicleId).execute();
         }
 
-
         @SneakyThrows
         public static Response<Integer> createVehicles(Car car){
                 return vehicleCalls.createVehicles(car).execute();
@@ -31,6 +30,11 @@ public class Vehicles {
         @SneakyThrows
         public static Response<ResponseBody> deleteVehicleById(Integer vehicleId){
                 return vehicleCalls.deleteVehicleById(vehicleId).execute();
+        }
+
+        @SneakyThrows
+        public static Response<Integer> updateVehicleById(Integer vehicleId, Car car){
+                return vehicleCalls.updateVehicleById(vehicleId, car).execute();
         }
 
 }

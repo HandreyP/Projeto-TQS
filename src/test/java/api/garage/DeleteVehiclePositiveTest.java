@@ -2,7 +2,6 @@ package api.garage;
 
 import api.mappings.Car;
 import okhttp3.ResponseBody;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import retrofit2.Response;
@@ -12,7 +11,7 @@ import static api.validators.ResponseValidator.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class DeleteFoodPositiveTest {
+public class DeleteVehiclePositiveTest {
 
     private Integer vehicleId;
 
@@ -32,7 +31,6 @@ public class DeleteFoodPositiveTest {
         vehicleId = responseCreate.body();
 
     }
-
 
 
     @Test(description = "delete vehicle with sucess")

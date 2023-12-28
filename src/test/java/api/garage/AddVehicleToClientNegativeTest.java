@@ -6,19 +6,19 @@ import org.junit.Test;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+//import retrofit2.converter.gson.GsonConverterFactory;
 
 import static org.junit.Assert.assertFalse;
 
 public class AddVehicleToClientNegativeTest {
 
-    @Test //(description = "add a vehivle to a client")
+    @Test //(description = "add a vehicle to a client")
     //passa e não deveria passar
     public void testAddVehicleToClientNegative() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:8080")
-                .addConverterFactory(GsonConverterFactory.create())
+
                 .build();
 
         VehicleCalls vehicleCalls = retrofit.create(VehicleCalls.class);
