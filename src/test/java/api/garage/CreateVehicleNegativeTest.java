@@ -239,6 +239,22 @@ public class CreateVehicleNegativeTest {
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
     }
 
+    @Test(description = "create vehicle with plate Null")
+    public void createVehicleWithPlatesNullTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plate(null)
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertInternalServerError(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(500));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Internal Server Error"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \"String.matches(String)\" because \"plate\" is null"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
     @Test(description = "create vehicle without plate")
     public void createVehicleWithoutPlateTest() throws IOException {
         Car carRequest = Car.builder()
@@ -256,6 +272,91 @@ public class CreateVehicleNegativeTest {
         assertThat("status is not the expected", errorResponse.getStatus(), is(500));
         assertThat("Error is not the expected", errorResponse.getError(), is("Internal Server Error"));
         assertThat("Message is not the expected", errorResponse.getMessage(), is("Cannot invoke \"String.matches(String)\" because \"plate\" is null"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(description = "create vehicle with a plate only letters")
+    public void createVehicleWithPlateOnlyLettersTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plateYear(2045)
+                .plate("ABFAWW")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertBadRequest(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(400));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(description = "create vehicle with a plate only letters but with space")
+    public void createVehicleWithPlateOnlyLettersButWithSpaceTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plateYear(2045)
+                .plate("AB-FA-WW")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertBadRequest(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(400));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(description = "create vehicle with a plate only numbers but with space")
+    public void createVehicleWithPlateOnlyNumbersButWithSpaceTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plateYear(2045)
+                .plate("01-23-45")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertBadRequest(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(400));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(description = "create vehicle with a plate only numbers")
+    public void createVehicleWithPlateOnlyNumbersTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plateYear(2045)
+                .plate("012345")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertBadRequest(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(400));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(description = "create vehicle with a plate with character special")
+    public void createVehicleWithPlateWithCharacterSpecialTest() throws IOException {
+        Car carRequest = Car.builder()
+                .plateYear(2045)
+                .plate("MM-23-!@")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertBadRequest(response);
+
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+
+        assertThat("status is not the expected", errorResponse.getStatus(), is(400));
+        assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
+        assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
     }
     @AfterClass
