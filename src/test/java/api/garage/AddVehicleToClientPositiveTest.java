@@ -1,6 +1,5 @@
 package api.garage;
 
-import api.calls.VehicleCalls;
 import api.mappings.Car;
 
 import api.mappings.Human;
@@ -13,7 +12,7 @@ import retrofit2.Response;
 
 import static api.retrofit.vehicle.Vehicles.*;
 import static api.retrofit.vehicle.Vehicles.deleteVehicleById;
-import static api.validators.ResponseValidator.assertOk;
+import static api.validators.ResponseValidator.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -23,24 +22,6 @@ public class AddVehicleToClientPositiveTest {
         private Integer vehicleId, clientId;
         @BeforeTest
         public void setup(){
-            Human humanRequest = Human.builder()
-                    .firstName("Handrey")
-                    .lastName("Pereira")
-                    .address("Aveiro")
-                    .postalCode("3800-545")
-                    .city("Aveiro")
-                    .country("Brasil")
-                    .phoneNumber(912212212)
-                    .nif(212212412)
-                    .birthDate("2000-12-29")
-                    .clientDate("2023-12-29")
-                    .build();
-            Response<Integer> responseCreateHuman = createClient(humanRequest);
-
-            assertThat("Body is not null", responseCreateHuman.body(), notNullValue());
-            clientId = responseCreateHuman.body();
-
-
             Car carRequest = Car.builder()
                     .brand("Renault")
                     .model("Megane")
@@ -55,14 +36,15 @@ public class AddVehicleToClientPositiveTest {
             vehicleId = responseCreate.body();
         }
 
-        @Test(description = "put vehicle with sucess")
-        public void updateVehicleByIdTest(){
-            Response<Integer> response = addVehicleToClient(vehicleId, clientId);
-            assertOk(response);
+        @Test(description = "add a client to a vehicle with sucess")
+        public void addVehicleToClientTest(){
+            Response<Integer> response = addVehicleToClient(vehicleId, 1);
+            assertNoContent(response);
 
             Car carResponse = getVehicleById(vehicleId).body();
 
             assertThat("id should not be null", carResponse.getId(), notNullValue());
+            assertThat("Client should not be null", carResponse.getClient(), is(carResponse.getClient()));
             assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
             assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
             assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));

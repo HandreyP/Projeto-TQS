@@ -48,4 +48,10 @@ public class Vehicles {
                 return vehicleCalls.addVehicleToClient(vehicleId, clientId).execute();
         }
 
+
+        @SneakyThrows
+        public static Response<Integer> removeVehicleFromClient(Integer vehicleId){
+                return vehicleCalls.removeVehicleFromClient(vehicleId).execute();
+        }
+
 }

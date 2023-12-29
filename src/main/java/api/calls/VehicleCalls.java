@@ -7,20 +7,16 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.util.List;
-import java.util.SimpleTimeZone;
 
 public interface VehicleCalls {
 
     String VEHICLE = "vehicle";
-
     String VEHICLE_ID = "vehicle/{id}";
-
     String ID = "id";
-
-    String VEHICLE_TO_CLIENT = "vehicle/{vehicleId}/client/{clientId}";
-
+    String VEHICLE_TO_CLIENT = "vehicle/{id}/client/{clientId}";
+    String VEHICLE_CLIENT="vehicle/{id}/client/";
     String CLIENT= "client";
-    String CLIENT_ID = "client/{id}";
+    String CLIENT_ID = "clientId";
 
 
 
@@ -29,7 +25,6 @@ public interface VehicleCalls {
 
     @GET(VEHICLE_ID)
     Call<Car> getVehiclesById(@Path(ID) Integer vehicleId);
-
 
     @POST(VEHICLE)
     Call<Integer> createVehicles(@Body Car car);
@@ -44,5 +39,8 @@ public interface VehicleCalls {
     Call<Integer> updateVehicleById(@Path(ID) Integer vehicleId, @Body Car car);
 
     @PUT(VEHICLE_TO_CLIENT)
-    Call<Integer> addVehicleToClient(@Path(ID) Integer vehicleId, @Path(ID) Integer clientId);
+    Call<Integer> addVehicleToClient(@Path(ID) Integer vehicleId, @Path(CLIENT_ID) Integer clientId);
+
+    @DELETE(VEHICLE_CLIENT)
+    Call<Integer> removeVehicleFromClient(@Path(ID) Integer vehicleId);
 }
