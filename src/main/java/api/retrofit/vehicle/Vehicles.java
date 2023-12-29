@@ -2,6 +2,7 @@ package api.retrofit.vehicle;
 
 import api.calls.VehicleCalls;
 import api.mappings.Car;
+import api.mappings.Human;
 import api.retrofit.RetrofitBuilder;
 import lombok.SneakyThrows;
 import okhttp3.ResponseBody;
@@ -28,6 +29,11 @@ public class Vehicles {
         }
 
         @SneakyThrows
+        public static Response<Integer> createClient(Human human){
+                return vehicleCalls.createClient(human).execute();
+        }
+
+        @SneakyThrows
         public static Response<ResponseBody> deleteVehicleById(Integer vehicleId){
                 return vehicleCalls.deleteVehicleById(vehicleId).execute();
         }
@@ -35,6 +41,11 @@ public class Vehicles {
         @SneakyThrows
         public static Response<Integer> updateVehicleById(Integer vehicleId, Car car){
                 return vehicleCalls.updateVehicleById(vehicleId, car).execute();
+        }
+
+        @SneakyThrows
+        public static Response<Integer> addVehicleToClient(Integer vehicleId, Integer clientId){
+                return vehicleCalls.addVehicleToClient(vehicleId, clientId).execute();
         }
 
 }
