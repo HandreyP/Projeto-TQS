@@ -80,7 +80,7 @@ public class RemoveVehicleFromClientNegativeTest {
     }
 
     @Test(description = "Remove vehicle from client twice")
-    public void RemoveVehicleFromClientTwiceTest() throws IOException {
+    public void RemoveVehicleFromClientTwiceTest()  {
         Response<Integer> response = removeVehicleFromClient(vehicleId);
         assertNoContent(response);
 
