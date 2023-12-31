@@ -65,7 +65,7 @@ public class CreateVehicleNegativeTest {
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
     }
     @Test(description = "create vehicle with invalid client")
-    public void createVehicleWithInvalidClientTest() throws IOException {
+    public void createVehicleWithInvalidClientTest() {
         Car carRequest = Car.builder()
                 .client(0)
                 .brand("Renault")
@@ -159,7 +159,7 @@ public class CreateVehicleNegativeTest {
     }
 
     @Test(description = "create vehicle with plate year is 0")
-    public void createVehicleWithOnlyPlateYearTest() throws IOException {
+    public void createVehicleWithOnlyPlateYearTest() {
         Car carRequest = Car.builder()
                 .plateYear(0)
                 .plate("AB-22-WW")
@@ -181,7 +181,7 @@ public class CreateVehicleNegativeTest {
     }
 
     @Test(description = "create vehicle with negative plate year")
-    public void createVehicleWithNegativePlateYearTest() throws IOException {
+    public void createVehicleWithNegativePlateYearTest()  {
         Car carRequest = Car.builder()
                 .plateYear(-1)
                 .plate("AB-22-WW")
@@ -202,8 +202,30 @@ public class CreateVehicleNegativeTest {
         assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
     }
 
+    @Test(description = "create vehicle with a random number plate year")
+    public void createVehicleWithRandomNumberPlateYearTest()  {
+        Car carRequest = Car.builder()
+                .plateYear(21564654)
+                .plate("AB-22-WW")
+                .build();
+        Response<Integer> response = createVehicles(carRequest);
+        assertCreated(response);
+
+        vehicleId = response.body();
+        vehicleIds.add(vehicleId);
+        Car carResponse = getVehicleById(vehicleId).body();
+
+        assertThat("id should not be null", carResponse.getId(), notNullValue());
+        assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
+        assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
+        assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
+        assertThat("Type should not be expected", carResponse.getType(), is(carResponse.getType()));
+        assertThat("PLate should not be expected", carResponse.getPlate(), is(carResponse.getPlate()));
+        assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
+    }
+
     @Test(description = "create vehicle with invalid plate year")
-    public void createVehicleWithInvalidPlateYearTest() throws IOException {
+    public void createVehicleWithInvalidPlateYearTest() {
         Car carRequest = Car.builder()
                 .plateYear(2045)
                 .plate("AB-22-WW")
