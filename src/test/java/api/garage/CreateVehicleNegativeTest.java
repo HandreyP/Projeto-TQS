@@ -93,7 +93,7 @@ public class CreateVehicleNegativeTest {
     }
 
     @Test(description = "create vehicle with negative client")
-    public void createVehicleWithNegativeClientTest() throws IOException {
+    public void createVehicleWithNegativeClientTest() {
         Car carRequest = Car.builder()
                 .client(-1)
                 .brand("Renault")
@@ -120,9 +120,9 @@ public class CreateVehicleNegativeTest {
         assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
     }
 
-    // Perguntar pro professor sobre essas, onde coloca-las, e onde por o deleteById
+
     @Test(description = "create vehicle with only plate")
-    public void createVehicleWithOnlyPlateTest() throws IOException {
+    public void createVehicleWithOnlyPlateTest() {
         Car carRequest = Car.builder()
                 .plate("AB-22-WW")
                 .build();
