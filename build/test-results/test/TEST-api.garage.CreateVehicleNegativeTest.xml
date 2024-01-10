@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.garage.CreateVehicleNegativeTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2024-01-10T17:13:25" hostname="DESKTOP-3O59KCP" time="0.171">
+  <properties/>
+  <testcase name="createVehicleWithIdTest" classname="api.garage.CreateVehicleNegativeTest" time="0.009"/>
+  <testcase name="createVehicleWithIdZeroTest" classname="api.garage.CreateVehicleNegativeTest" time="0.007"/>
+  <testcase name="createVehicleWithInvalidClientTest" classname="api.garage.CreateVehicleNegativeTest" time="0.011"/>
+  <testcase name="createVehicleWithInvalidPlateTest" classname="api.garage.CreateVehicleNegativeTest" time="0.006"/>
+  <testcase name="createVehicleWithInvalidPlateYearTest" classname="api.garage.CreateVehicleNegativeTest" time="0.013"/>
+  <testcase name="createVehicleWithNegativeClientTest" classname="api.garage.CreateVehicleNegativeTest" time="0.012"/>
+  <testcase name="createVehicleWithNegativePlateYearTest" classname="api.garage.CreateVehicleNegativeTest" time="0.011"/>
+  <testcase name="createVehicleWithOnlyPlateTest" classname="api.garage.CreateVehicleNegativeTest" time="0.009"/>
+  <testcase name="createVehicleWithOnlyPlateYearTest" classname="api.garage.CreateVehicleNegativeTest" time="0.015"/>
+  <testcase name="createVehicleWithPlateOnlyLettersButWithSpaceTest" classname="api.garage.CreateVehicleNegativeTest" time="0.006"/>
+  <testcase name="createVehicleWithPlateOnlyLettersTest" classname="api.garage.CreateVehicleNegativeTest" time="0.006"/>
+  <testcase name="createVehicleWithPlateOnlyNumbersButWithSpaceTest" classname="api.garage.CreateVehicleNegativeTest" time="0.007"/>
+  <testcase name="createVehicleWithPlateOnlyNumbersTest" classname="api.garage.CreateVehicleNegativeTest" time="0.006"/>
+  <testcase name="createVehicleWithPlateWithCharacterSpecialTest" classname="api.garage.CreateVehicleNegativeTest" time="0.007"/>
+  <testcase name="createVehicleWithPlatesNullTest" classname="api.garage.CreateVehicleNegativeTest" time="0.008"/>
+  <testcase name="createVehicleWithRandomNumberPlateYearTest" classname="api.garage.CreateVehicleNegativeTest" time="0.014"/>
+  <testcase name="createVehicleWithoutAttributesTest" classname="api.garage.CreateVehicleNegativeTest" time="0.007"/>
+  <testcase name="createVehicleWithoutPlateTest" classname="api.garage.CreateVehicleNegativeTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 122
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":15,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (122-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.710+00:00","status":400,"error":"Bad Request","message":"Id should be null on creation","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (140-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 111
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":0,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (111-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.721+00:00","status":400,"error":"Bad Request","message":"Id should be null on creation","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (140-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 121
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":0,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (121-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 339
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/339
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/339 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":339,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (123-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 112
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":"AB22WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (112-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.739+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 114
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (114-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (4ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 340
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/340
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/340 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":340,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (113-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 122
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":-1,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (122-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 341
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/341
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/341 (1ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":341,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (123-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 112
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":-1,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (112-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 342
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/342
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/342 (1ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":342,"client":null,"brand":null,"model":null,"plateYear":-1,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (111-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 114
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (114-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 343
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/343
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/343 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":343,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (113-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 111
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":0,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (111-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 344
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/344
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/344 (1ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":344,"client":null,"brand":null,"model":null,"plateYear":0,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (110-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 114
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"AB-FA-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (114-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.808+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 112
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"ABFAWW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (112-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.816+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 114
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"01-23-45","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (114-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.823+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 112
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"012345","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (112-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.830+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 114
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":2045,"type":null,"plate":"MM-23-!@","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (114-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.838+00:00","status":400,"error":"Bad Request","message":"Invalid Plate","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (124-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 108
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":null,"active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (108-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 500 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.846+00:00","status":500,"error":"Internal Server Error","message":"Cannot invoke \"String.matches(String)\" because \"plate\" is null","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (187-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 118
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":21564654,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (118-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 201 http://localhost:8080/vehicle (4ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 345
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (3-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/345
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/345 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":345,"client":null,"brand":null,"model":null,"plateYear":21564654,"type":null,"plate":"AB-22-WW","active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (117-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 108
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":null,"model":null,"plateYear":null,"type":null,"plate":null,"active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (108-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 500 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.868+00:00","status":500,"error":"Internal Server Error","message":"Cannot invoke \"String.matches(String)\" because \"plate\" is null","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (187-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> POST http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 118
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":null,"active":false}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END POST (118-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 500 http://localhost:8080/vehicle (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.875+00:00","status":500,"error":"Internal Server Error","message":"Cannot invoke \"String.matches(String)\" because \"plate\" is null","path":"/vehicle"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (187-byte body)
+]]></system-err>
+</testsuite>

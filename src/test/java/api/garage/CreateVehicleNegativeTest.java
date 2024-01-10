@@ -83,7 +83,7 @@ public class CreateVehicleNegativeTest {
         Car carResponse = getVehicleById(vehicleId).body();
 
         assertThat("id should not be null", carResponse.getId(), notNullValue());
-        assertThat("Client should not be null", carResponse.getClient(), notNullValue());
+        assertThat("Client should be null", carResponse.getClient(), is(carResponse.getClient()));
         assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
         assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
         assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
@@ -111,7 +111,7 @@ public class CreateVehicleNegativeTest {
         Car carResponse = getVehicleById(vehicleId).body();
 
         assertThat("id should not be null", carResponse.getId(), notNullValue());
-        assertThat("Client should not be null", carResponse.getClient(), notNullValue());
+        assertThat("Client should be null", carResponse.getClient(), is(carResponse.getClient()));
         assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
         assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
         assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));

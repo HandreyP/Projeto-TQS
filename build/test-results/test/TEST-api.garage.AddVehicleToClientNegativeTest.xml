@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.garage.AddVehicleToClientNegativeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-01-10T17:13:25" hostname="DESKTOP-3O59KCP" time="0.127">
+  <properties/>
+  <testcase name="addVehicleToClientByNegativeIdTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.052"/>
+  <testcase name="addVehicleToClientByNonExistentIdTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.008"/>
+  <testcase name="addVehicleWithNegativeIdToClientTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.008"/>
+  <testcase name="addVehicleWithNegativeIdToClientWithNegativeIdTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.008"/>
+  <testcase name="addVehicleWithNonExistentIdToClientTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.007"/>
+  <testcase name="addVehicleWithNonExistentIdToClientWithNonExistentIdTest" classname="api.garage.AddVehicleToClientNegativeTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/332/client/-1
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/332/client/-1 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.546+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/332/client/-1"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (132-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/332/client/0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/332/client/0 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.610+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/332/client/0"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (131-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (1ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/-1/client/1
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/-1/client/1 (4ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.624+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/-1/client/1"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (130-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/-1/client/-1
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/-1/client/-1 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.636+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/-1/client/-1"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (131-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/0/client/1
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/0/client/1 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.650+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/0/client/1"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (129-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/0/client/0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (0-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/0/client/0 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.664+00:00","status":404,"error":"Not Found","message":"Not found","path":"/vehicle/0/client/0"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (129-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> DELETE http://localhost:8080/vehicle/332
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END DELETE
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 204 http://localhost:8080/vehicle/332 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP
+]]></system-err>
+</testsuite>

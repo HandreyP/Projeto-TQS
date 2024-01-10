@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.garage.GetVehiclePositiveTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-10T17:13:25" hostname="DESKTOP-3O59KCP" time="0.016">
+  <properties/>
+  <testcase name="getAllVehiclesTest" classname="api.garage.GetVehiclePositiveTest" time="0.011"/>
+  <testcase name="getVehicleByIdTest" classname="api.garage.GetVehiclePositiveTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle (4ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: [{"id":1,"client":1,"brand":"Fiat","model":"Punto","plateYear":1999,"type":"Hatchback","plate":"ZE-10-20","active":true},{"id":2,"client":1,"brand":"Opel","model":"Corsa","plateYear":2002,"type":"Hatchback","plate":"34-CB-45","active":true},{"id":3,"client":2,"brand":"Peugeot","model":"504","plateYear":1988,"type":"Van","plate":"PI-88-60","active":false},{"id":335,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":true},{"id":336,"client":null,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":true},{"id":337,"client":1,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":true},{"id":338,"client":1,"brand":"Renault","model":"Megane","plateYear":2019,"type":"Van","plate":"AB-22-WW","active":true}]
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (843-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/2
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 200 http://localhost:8080/vehicle/2 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":2,"client":1,"brand":"Opel","model":"Corsa","plateYear":2002,"type":"Hatchback","plate":"34-CB-45","active":true}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (119-byte body)
+]]></system-err>
+</testsuite>

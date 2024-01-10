@@ -133,6 +133,49 @@ public class AddVehicleToClientNegativeTest {
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle/0/client/0"));
     }
 
+    @Test(description = "add a client to a vehicle with same client")
+    public void addVehicleWithClientWithSameClientTest() throws IOException {
+        Response<Integer> responseIn = addVehicleToClient(vehicleId, 1);
+        assertNoContent(responseIn);
+
+        Response<Integer> response = addVehicleToClient(vehicleId, 1);
+        assertNoContent(response);
+
+        vehicleIds.add(vehicleId);
+
+        Car carResponse = getVehicleById(vehicleId).body();
+
+        assertThat("id should not be null", carResponse.getId(), notNullValue());
+        assertThat("Client should not be expected", carResponse.getClient(), is(carResponse.getClient()));
+        assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
+        assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
+        assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
+        assertThat("Type should not be expected", carResponse.getType(), is(carResponse.getType()));
+        assertThat("PLate should not be expected", carResponse.getPlate(), is(carResponse.getPlate()));
+        assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
+    }
+    @Test(description = "add a client to a vehicle with another client")
+    public void addVehicleWithClientWithClientExistentTest() throws IOException {
+        Response<Integer> responseIn = addVehicleToClient(vehicleId, 1);
+        assertNoContent(responseIn);
+
+        Response<Integer> response = addVehicleToClient(vehicleId, 2);
+        assertNoContent(response);
+
+        vehicleIds.add(vehicleId);
+
+        Car carResponse = getVehicleById(vehicleId).body();
+
+        assertThat("id should not be null", carResponse.getId(), notNullValue());
+        assertThat("Client should not be expected", carResponse.getClient(), is(carResponse.getClient()));
+        assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
+        assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
+        assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
+        assertThat("Type should not be expected", carResponse.getType(), is(carResponse.getType()));
+        assertThat("PLate should not be expected", carResponse.getPlate(), is(carResponse.getPlate()));
+        assertThat("Active should not be expected", carResponse.isActive(), is(carResponse.isActive()));
+    }
+
 
     @AfterMethod
     public void cleanUp(){

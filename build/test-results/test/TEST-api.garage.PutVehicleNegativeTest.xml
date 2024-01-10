@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.garage.PutVehicleNegativeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-10T17:13:25" hostname="DESKTOP-3O59KCP" time="0.013">
+  <properties/>
+  <testcase name="updateVehicleWithIdTest" classname="api.garage.PutVehicleNegativeTest" time="0.006"/>
+  <testcase name="updateVehicleWithNullPlateTest" classname="api.garage.PutVehicleNegativeTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/335
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 122
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":335,"client":null,"brand":"Ferrari","model":"F-50","plateYear":1995,"type":"sport","plate":"AC-44-ZZ","active":true}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (122-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 400 http://localhost:8080/vehicle/335 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.980+00:00","status":400,"error":"Bad Request","message":"Id on body should be null on Update","path":"/vehicle/335"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (150-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> PUT http://localhost:8080/vehicle/335
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json; charset=UTF-8
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Length: 117
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"id":null,"client":null,"brand":"Ferrari","model":"F-50","plateYear":1995,"type":"sport","plate":null,"active":true}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END PUT (117-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 500 http://localhost:8080/vehicle/335 (3ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: close
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.988+00:00","status":500,"error":"Internal Server Error","message":"Cannot invoke \"String.matches(String)\" because \"plate\" is null","path":"/vehicle/335"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (191-byte body)
+]]></system-err>
+</testsuite>

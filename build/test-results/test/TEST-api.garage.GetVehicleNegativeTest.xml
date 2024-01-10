@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.garage.GetVehicleNegativeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-10T17:13:25" hostname="DESKTOP-3O59KCP" time="0.011">
+  <properties/>
+  <testcase name="getVehicleByIdNonExistentTest" classname="api.garage.GetVehicleNegativeTest" time="0.005"/>
+  <testcase name="getVehicleByNegativeIdTest" classname="api.garage.GetVehicleNegativeTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/0
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/0 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.952+00:00","status":404,"error":"Not Found","message":"Vehicle not found","path":"/vehicle/0"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (128-byte body)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> GET http://localhost:8080/vehicle/-1
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: --> END GET
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- 404 http://localhost:8080/vehicle/-1 (2ms)
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Content-Type: application/json
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Transfer-Encoding: chunked
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Date: Wed, 10 Jan 2024 17:13:25 GMT
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Keep-Alive: timeout=60
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: Connection: keep-alive
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: 
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: {"timestamp":"2024-01-10T17:13:25.958+00:00","status":404,"error":"Not Found","message":"Vehicle not found","path":"/vehicle/-1"}
+jan. 10, 2024 5:13:25 DA TARDE okhttp3.internal.platform.Platform log
+INFO: <-- END HTTP (129-byte body)
+]]></system-err>
+</testsuite>
