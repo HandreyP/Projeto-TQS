@@ -7,6 +7,7 @@ import api.mappings.Human;
 import api.retrofit.vehicle.Errors;
 import api.retrofit.vehicle.Vehicles;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import retrofit2.Response;
@@ -48,7 +49,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(vehicleId, 0);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -63,7 +63,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(vehicleId, -1);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -78,7 +77,7 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(0, 1);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
+
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -93,7 +92,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(-1, 1);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -108,7 +106,7 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(-1, -1);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
+
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -123,7 +121,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(0, 0);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -134,9 +131,10 @@ public class AddVehicleToClientNegativeTest {
     }
 
     @Test(description = "add a client to a vehicle with same client")
-    public void addVehicleWithClientWithSameClientTest() throws IOException {
+    public void addVehicleWithClientWithSameClientTest(){
         Response<Integer> responseIn = addVehicleToClient(vehicleId, 1);
         assertNoContent(responseIn);
+
 
         Response<Integer> response = addVehicleToClient(vehicleId, 1);
         assertNoContent(response);
@@ -177,9 +175,10 @@ public class AddVehicleToClientNegativeTest {
     }
 
 
-    @AfterMethod
+    @AfterTest
     public void cleanUp(){
         vehicleIds.forEach(Vehicles::deleteVehicleById);
         vehicleIds.clear();
+
     }
 }
