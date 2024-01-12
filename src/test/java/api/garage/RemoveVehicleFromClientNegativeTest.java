@@ -53,6 +53,7 @@ public class RemoveVehicleFromClientNegativeTest {
         assertNotFound(response);
 
 
+        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -68,6 +69,7 @@ public class RemoveVehicleFromClientNegativeTest {
         assertNotFound(response);
 
 
+        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
