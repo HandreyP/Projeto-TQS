@@ -22,6 +22,23 @@ public class AddVehicleToClientPositiveTest {
         private Integer vehicleId, clientId;
         @BeforeTest
         public void setup(){
+            Human ClientResponse = Human.builder()
+                    .firstName("James")
+                    .lastName("Bond")
+                    .phoneNumber(915035235)
+                    .address("MI - 6 Londres")
+                    .country("Inglaterra")
+                    .city("Londres")
+                    .postalCode("4350-334")
+                    .nif(233211225)
+                    .birthDate("2024-01-18")
+                    .clientDate("2024-01-13")
+                    .build();
+            Response<Integer> responseHuman = createClient(ClientResponse);
+            assertThat("Body is not null", responseHuman.body(), notNullValue());
+            clientId = responseHuman.body();
+
+
             Car carRequest = Car.builder()
                     .brand("Renault")
                     .model("Megane")
@@ -38,13 +55,15 @@ public class AddVehicleToClientPositiveTest {
 
         @Test(description = "add a client to a vehicle with sucess")
         public void addVehicleToClientTest(){
-            Response<Integer> response = addVehicleToClient(vehicleId, 1);
+            Response<Integer> response = addVehicleToClient(vehicleId, clientId);
             assertNoContent(response);
 
             Car carResponse = getVehicleById(vehicleId).body();
 
+            Human humanResponse = getClientById(clientId).body();
+
             assertThat("id should not be null", carResponse.getId(), notNullValue());
-            assertThat("Client should not be null", carResponse.getClient(), is(carResponse.getClient()));
+            assertThat("Client should not be null", carResponse.getClient(), is(humanResponse.getId()));
             assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
             assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
             assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
@@ -56,5 +75,7 @@ public class AddVehicleToClientPositiveTest {
         @AfterMethod
         public void cleanUp(){
             deleteVehicleById(vehicleId);
+
+            deleteClientById(clientId);
     }
 }

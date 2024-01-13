@@ -27,8 +27,27 @@ public class AddVehicleToClientNegativeTest {
 
     private Integer vehicleId, clientId;
     private List<Integer> vehicleIds = new ArrayList<>();
+    private List<Integer> clientIds = new ArrayList<>();
     @BeforeTest
     public void setup(){
+        Human ClientResponse = Human.builder()
+                .firstName("James")
+                .lastName("Bond")
+                .phoneNumber(915035235)
+                .address("MI - 6 Londres")
+                .country("Inglaterra")
+                .city("Londres")
+                .postalCode("4350-334")
+                .nif(233211225)
+                .birthDate("2024-01-18")
+                .clientDate("2024-01-13")
+                .build();
+        Response<Integer> responseHuman = createClient(ClientResponse);
+        assertThat("Body is not null", responseHuman.body(), notNullValue());
+        clientId = responseHuman.body();
+
+
+
         Car carRequest = Car.builder()
                 .brand("Renault")
                 .model("Megane")
@@ -75,32 +94,32 @@ public class AddVehicleToClientNegativeTest {
 
     @Test(description = "add a client to a vehicle with non existent Id")
     public void addVehicleWithNonExistentIdToClientTest() throws IOException {
-        Response<Integer> response = addVehicleToClient(0, 1);
+        Response<Integer> response = addVehicleToClient(0, clientId);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
+        clientIds.add(clientId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
         assertThat("status is not the expected", errorResponse.getStatus(), is(404));
         assertThat("Error is not the expected", errorResponse.getError(), is("Not Found"));
         assertThat("Message is not the expected", errorResponse.getMessage(), is("Not found"));
-        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle/0/client/1"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle/0/client/"+clientId));
     }
 
     @Test(description = "add a client to a vehicle with negative Id")
     public void addVehicleWithNegativeIdToClientTest() throws IOException {
-        Response<Integer> response = addVehicleToClient(-1, 1);
+        Response<Integer> response = addVehicleToClient(-1, clientId);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
+        clientIds.add(clientId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
         assertThat("status is not the expected", errorResponse.getStatus(), is(404));
         assertThat("Error is not the expected", errorResponse.getError(), is("Not Found"));
         assertThat("Message is not the expected", errorResponse.getMessage(), is("Not found"));
-        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle/-1/client/1"));
+        assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle/-1/client/"+clientId));
     }
 
     @Test(description = "add a client by negative Id to a vehicle with negative Id")
@@ -108,7 +127,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(-1, -1);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -123,7 +141,6 @@ public class AddVehicleToClientNegativeTest {
         Response<Integer> response = addVehicleToClient(0, 0);
         assertNotFound(response);
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -138,5 +155,8 @@ public class AddVehicleToClientNegativeTest {
     public void cleanUp(){
         vehicleIds.forEach(Vehicles::deleteVehicleById);
         vehicleIds.clear();
+
+        clientIds.forEach(Vehicles :: deleteClientById);
+        clientIds.clear();
     }
 }

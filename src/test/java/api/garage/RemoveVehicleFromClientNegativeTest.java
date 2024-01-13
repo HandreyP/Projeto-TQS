@@ -29,6 +29,23 @@ public class RemoveVehicleFromClientNegativeTest {
     private List<Integer> vehicleIds = new ArrayList<>();
     @BeforeTest
     public void setup(){
+        Human ClientResponse = Human.builder()
+                .firstName("James")
+                .lastName("Bond")
+                .phoneNumber(915035235)
+                .address("MI - 6 Londres")
+                .country("Inglaterra")
+                .city("Londres")
+                .postalCode("4350-334")
+                .nif(233211225)
+                .birthDate("2024-01-18")
+                .clientDate("2024-01-13")
+                .build();
+        Response<Integer> responseHuman = createClient(ClientResponse);
+        assertThat("Body is not null", responseHuman.body(), notNullValue());
+        clientId = responseHuman.body();
+
+
         Car carRequest = Car.builder()
                 .brand("Renault")
                 .model("Megane")
@@ -42,7 +59,7 @@ public class RemoveVehicleFromClientNegativeTest {
         assertThat("Body is not null", responseCreate.body(), notNullValue());
         vehicleId = responseCreate.body();
 
-        Response<Integer> responseAdd = addVehicleToClient(vehicleId, 1);
+        Response<Integer> responseAdd = addVehicleToClient(vehicleId, clientId);
         assertNoContent(responseAdd);
 
     }
@@ -53,7 +70,6 @@ public class RemoveVehicleFromClientNegativeTest {
         assertNotFound(response);
 
 
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -67,9 +83,6 @@ public class RemoveVehicleFromClientNegativeTest {
     public void RemoveVehicleFromClientWithNegativeIdTest() throws IOException {
         Response<Integer> response = removeVehicleFromClient(-1);
         assertNotFound(response);
-
-
-        vehicleIds.add(vehicleId);
 
         ErrorResponse errorResponse = Errors.getErrorsResponse(response);
 
@@ -88,6 +101,7 @@ public class RemoveVehicleFromClientNegativeTest {
         assertNoContent(responseSecond);
 
         vehicleIds.add(vehicleId);
+        Human humanResponse = getClientById(clientId).body();
 
         Car carResponse = getVehicleById(vehicleId).body();
 
@@ -105,5 +119,7 @@ public class RemoveVehicleFromClientNegativeTest {
     public void cleanUp(){
         vehicleIds.forEach(Vehicles::deleteVehicleById);
         vehicleIds.clear();
+
+        deleteClientById(clientId);
     }
 }

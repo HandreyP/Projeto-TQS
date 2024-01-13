@@ -18,6 +18,8 @@ public interface VehicleCalls {
     String CLIENT= "client";
     String CLIENT_ID = "clientId";
 
+    String CLIENT_ID_PATH = "client/{clientId}";
+
 
 
     @GET(VEHICLE)
@@ -25,6 +27,9 @@ public interface VehicleCalls {
 
     @GET(VEHICLE_ID)
     Call<Car> getVehiclesById(@Path(ID) Integer vehicleId);
+
+    @GET(CLIENT_ID_PATH)
+    Call<Human> getClientById(@Path(CLIENT_ID) Integer clientId);
 
     @POST(VEHICLE)
     Call<Integer> createVehicles(@Body Car car);
@@ -34,6 +39,9 @@ public interface VehicleCalls {
 
     @DELETE(VEHICLE_ID)
     Call<ResponseBody> deleteVehicleById(@Path(ID) Integer vehicleId);
+
+    @DELETE(CLIENT_ID_PATH)
+    Call<ResponseBody> deleteClientById(@Path(CLIENT_ID) Integer clientId);
 
     @PUT(VEHICLE_ID)
     Call<Integer> updateVehicleById(@Path(ID) Integer vehicleId, @Body Car car);

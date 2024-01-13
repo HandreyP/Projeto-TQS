@@ -3,6 +3,8 @@ package api.mappings;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -33,6 +35,6 @@ public class Human {
     @JsonProperty("clientDate")
     private String clientDate;
     @JsonProperty("vehicles")
-    private Car car;
+    private List<Car> cars;
 }
 
