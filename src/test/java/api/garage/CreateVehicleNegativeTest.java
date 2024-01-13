@@ -5,6 +5,9 @@ import api.mappings.ErrorResponse;
 import api.retrofit.vehicle.Errors;
 
 import api.retrofit.vehicle.Vehicles;
+import api.validators.ResponseValidator;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import retrofit2.Response;
@@ -83,7 +86,7 @@ public class CreateVehicleNegativeTest {
         Car carResponse = getVehicleById(vehicleId).body();
 
         assertThat("id should not be null", carResponse.getId(), notNullValue());
-        assertThat("Client should be null", carResponse.getClient(), is(carResponse.getClient()));
+        assertThat("Client should not be null", carResponse.getClient(), notNullValue());
         assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
         assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
         assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
@@ -111,7 +114,7 @@ public class CreateVehicleNegativeTest {
         Car carResponse = getVehicleById(vehicleId).body();
 
         assertThat("id should not be null", carResponse.getId(), notNullValue());
-        assertThat("Client should be null", carResponse.getClient(), is(carResponse.getClient()));
+        assertThat("Client should not be null", carResponse.getClient(), notNullValue());
         assertThat("Brand should not be expected", carResponse.getBrand(), is(carResponse.getBrand()));
         assertThat("Model should not be expected", carResponse.getModel(), is(carResponse.getModel()));
         assertThat("PlateYear should not be expected", carResponse.getPlateYear(), is(carResponse.getPlateYear()));
@@ -380,6 +383,20 @@ public class CreateVehicleNegativeTest {
         assertThat("Error is not the expected", errorResponse.getError(), is("Bad Request"));
         assertThat("Message is not the expected", errorResponse.getMessage(), is("Invalid Plate"));
         assertThat("Path is not the expected", errorResponse.getPath(), is("/vehicle"));
+    }
+
+    @Test(
+            description = "create vehicle with a plate with character special without space"
+    )
+    public void createVehicleWithPlateWithCharacterSpecialWithSpaceTest() throws IOException {
+        Car carRequest = Car.builder().plateYear(2045).plate("MM23!@").build();
+        Response<Integer> response = Vehicles.createVehicles(carRequest);
+        ResponseValidator.assertBadRequest(response);
+        ErrorResponse errorResponse = Errors.getErrorsResponse(response);
+        MatcherAssert.assertThat("status is not the expected", errorResponse.getStatus(), Matchers.is(400));
+        MatcherAssert.assertThat("Error is not the expected", errorResponse.getError(), Matchers.is("Bad Request"));
+        MatcherAssert.assertThat("Message is not the expected", errorResponse.getMessage(), Matchers.is("Invalid Plate"));
+        MatcherAssert.assertThat("Path is not the expected", errorResponse.getPath(), Matchers.is("/vehicle"));
     }
     @AfterClass
     public void cleanUp(){
