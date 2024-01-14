@@ -46,7 +46,7 @@ public class PutVehicleNegativeTest {
                 .id(vehicleId)
                 .brand("Ferrari")
                 .model("F-50")
-                .plateYear(1995 )
+                .plateYear(1995)
                 .type("sport")
                 .plate("AC-44-ZZ")
                 .active(true)
